@@ -1,0 +1,38 @@
+.top-header {
+  height: 70px;
+  border-bottom: 1px solid var(--light-grey);
+  background-color: white;
+  border-top-right-radius: 12px;
+  border-top-right-radius: 12px;
+
+  .nav {
+    .flex {
+      gap: 20px !important;
+    }
+
+    .link {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .active {
+      .link {
+        font-size: 14px;
+        height: 70px;
+        line-height: 70px;
+        width: 116px;
+        display: inline-block;
+        color: var(--secondary);
+        border-bottom: 3px solid var(--secondary);
+      }
+    }
+  }
+
+  .toggle-screen {
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

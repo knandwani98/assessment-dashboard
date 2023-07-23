@@ -1,0 +1,116 @@
+.main-container {
+  position: relative;
+  .add-assessment {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .add-form {
+      height: 80vh;
+      width: 591px;
+      overflow: scroll;
+      background-color: whitesmoke;
+      border-radius: 8px;
+      position: relative;
+
+      .form-header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        height: 70px;
+        padding: 30px;
+
+        .heading {
+          font-size: 20px;
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+
+          img {
+            width: 100%;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .form-main {
+        padding: 20px 30px;
+        gap: 20px;
+
+        .form-block {
+          gap: 10px;
+
+          .form-tags {
+            border: 1px solid var(--light-grey);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+
+            .all-tags {
+              padding: 16px;
+              gap: 10px;
+              flex-wrap: wrap;
+              background-color: white;
+
+              .tag {
+                gap: 5px;
+                font-size: 12px;
+                font-weight: 500;
+                white-space: nowrap;
+                padding: 6px 8px;
+                border-radius: 22px;
+                background-color: var(--light-blue);
+
+                img {
+                  width: 12px;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+
+          .form-box {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 15px;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--light-grey);
+            width: 100%;
+
+            &:focus {
+              outline-color: var(--secondary);
+            }
+          }
+        }
+      }
+
+      .form-footer {
+        position: sticky;
+        bottom: 0;
+        height: 80px;
+        width: 591px;
+        padding: 20px 30px;
+        color: white !important;
+        background-color: white;
+
+        .btn-close {
+          width: 100%;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 10px 30px;
+          color: white;
+          background-color: var(--secondary);
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

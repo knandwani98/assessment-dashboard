@@ -1,0 +1,93 @@
+.overview {
+  height: 155px;
+  display: grid;
+  gap: 16px;
+
+  .stats {
+    height: 114px;
+    border: 1px solid var(--light-grey);
+    border-radius: 12px;
+    overflow: hidden;
+
+    .card {
+      height: 114px;
+      // border: 1px solid var(--light-grey);
+      padding: 16px 20px;
+      gap: 16px;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      &:not(:last-child) {
+        border-right: 1px solid var(--light-grey);
+      }
+
+      &.total-assessments {
+        width: 162px;
+      }
+
+      &.candidates {
+        // width: 369px;
+      }
+
+      &.candidates-source {
+        .icon {
+          background-color: var(--light-pink);
+        }
+
+        // width: 499px;
+      }
+
+      &.purpose {
+        padding-right: 50px;
+
+        .icon {
+          background-color: var(--light-blue);
+        }
+      }
+
+      .f-left {
+        gap: 20px;
+      }
+
+      .heading {
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .context {
+        gap: 5px;
+
+        .text {
+          font-size: 20px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        p {
+          font-size: 12px;
+          white-space: nowrap;
+        }
+
+        .extra {
+          color: var(--green);
+          font-weight: 500;
+          font-size: 12px;
+        }
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: var(--light-purple);
+
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

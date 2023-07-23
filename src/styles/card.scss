@@ -1,0 +1,118 @@
+.all-assessment {
+  .card {
+    min-height: 209px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--light-grey);
+
+    hr {
+      margin: 1rem 0;
+      border: 1px dashed var(--light-grey);
+    }
+
+    .header {
+      .left {
+        gap: 10px;
+
+        .icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 8px;
+          background: var(--light-purple);
+        }
+
+        .title {
+          gap: 10px;
+
+          .description {
+            gap: 10px;
+
+            .post {
+              font-size: 14px;
+              font-weight: 600;
+            }
+
+            .calender {
+              gap: 4px;
+
+              .date {
+                font-size: 12px;
+                color: var(--primary);
+              }
+            }
+
+            .divider {
+              height: 16px;
+            }
+          }
+        }
+      }
+
+      .right {
+        align-self: flex-start;
+      }
+    }
+
+    .footer {
+      .left {
+        gap: 14px;
+
+        .numbers {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .label {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+
+      .right {
+        gap: 10px;
+        .btn-pill {
+          background-color: unset;
+          border-color: var(--accent);
+          color: var(--accent);
+          padding: 2px 8px;
+          width: (77px);
+          height: (30px);
+          font-size: 14px;
+          font-weight: 500;
+          gap: 4px;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+
+            // svg {
+            //   height: 16px;
+            //   width: 16.67px;
+            // }
+          }
+        }
+
+        .users {
+          .user {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            // background-color: var(--purple);
+            color: white;
+            font-size: 14px;
+            border: 1px solid white;
+
+            &:not(:first-child) {
+              margin-left: -15px;
+            }
+
+            &.flex {
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

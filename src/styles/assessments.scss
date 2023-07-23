@@ -1,0 +1,48 @@
+.my-assessment {
+  gap: 16px;
+
+  .all-assessment {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    .add-card {
+      border: 1px dashed var(--light-grey) !important;
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+      padding: 30px;
+      background-color: var(--sys-bg);
+
+      .plus {
+        gap: 10px;
+        flex-direction: column;
+
+        .icon {
+          height: 70px;
+          width: 70px;
+          border-radius: 50%;
+          background-color: white;
+
+          &:hover {
+            background-color: var(--light-blue);
+          }
+
+          img {
+            height: 24px;
+            width: 24px;
+          }
+        }
+
+        .heading {
+          font-size: 18px;
+          white-space: nowrap;
+        }
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 14.52px;
+      }
+    }
+  }
+}
