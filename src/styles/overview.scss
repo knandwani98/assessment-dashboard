@@ -1,40 +1,60 @@
+@import "../styles/queries";
+
 .overview {
-  height: 155px;
   display: grid;
   gap: 16px;
 
+  @include mobile {
+    // margin-bottom: auto;
+
+    .stats {
+      grid-template-columns: 1fr 1fr !important;
+      grid-gap: 1px;
+      margin-top: 14px;
+
+      .card {
+        border: 1px solid var(--accent) !important;
+      }
+
+      .total-assessments {
+        border-top-left-radius: 12px;
+      }
+
+      .purpose {
+        grid-area: 1/2;
+        border-top-right-radius: 12px;
+      }
+
+      .candidates {
+        grid-column: span 2;
+      }
+
+      .candidates-source {
+        grid-column: span 2;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+    }
+  }
+
   .stats {
-    height: 114px;
+    grid-template-columns: 1fr 2fr 3fr 1fr;
     border: 1px solid var(--light-grey);
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 12px !important;
 
     .card {
-      height: 114px;
-      // border: 1px solid var(--light-grey);
+      // height: 114px;
       padding: 16px 20px;
       gap: 16px;
-      flex-grow: 1;
-      flex-shrink: 1;
 
       &:not(:last-child) {
         border-right: 1px solid var(--light-grey);
-      }
-
-      &.total-assessments {
-        width: 162px;
-      }
-
-      &.candidates {
-        // width: 369px;
       }
 
       &.candidates-source {
         .icon {
           background-color: var(--light-pink);
         }
-
-        // width: 499px;
       }
 
       &.purpose {

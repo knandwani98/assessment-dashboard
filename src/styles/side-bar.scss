@@ -1,7 +1,10 @@
+@import "../styles/queries";
+
 .side-bar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   background-color: white;
   height: 100vh;
   width: 140px;
@@ -15,6 +18,24 @@
     &.flex {
       flex-direction: column;
       gap: 16px !important;
+    }
+
+    .side-header {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      width: 275px;
+
+      legend {
+        font-size: 20px;
+      }
+
+      .icon {
+        img {
+          width: 20px;
+          height: 20px;
+          transform: rotate(45deg);
+        }
+      }
     }
 
     .link {
@@ -69,6 +90,38 @@
 
       .dash {
         border-top: 1px dashed var(--light-grey);
+      }
+    }
+  }
+
+  @include mobile {
+    background-color: var(--lightest-blue);
+    width: 315px;
+
+    .side-header {
+      display: flex !important;
+    }
+
+    .link {
+      width: 275px !important;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+
+      .label {
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        font-weight: 500 !important;
+      }
+    }
+
+    .dash {
+      border-top: 1px dashed var(--primary) !important;
+    }
+
+    .admin {
+      .btn-pill {
+        order: 1;
+        margin-left: auto;
       }
     }
   }

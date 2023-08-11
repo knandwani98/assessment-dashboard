@@ -1,11 +1,11 @@
 import React from "react";
 
-const Overview = () => {
+const Overview = ({ showStats }) => {
   return (
-    <section className="overview">
-      <h1 className="heading">Assessments Overview</h1>
-      <div className="stats f-center">
-        {/* Total Assesments */}
+    <section className={`overview ${showStats ? "" : "hide"}`}>
+      <h1 className="heading hide">Assessments Overview</h1>
+      <div className="stats grid">
+        {/* Total assessments */}
         <div className="card total-assessments grid">
           <h3 className="heading">Total Assessment</h3>
           <div className="f-left">

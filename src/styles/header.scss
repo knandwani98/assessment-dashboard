@@ -1,3 +1,5 @@
+@import "../styles/queries";
+
 .top-header {
   height: 70px;
   border-bottom: 1px solid var(--light-grey);
@@ -5,9 +7,42 @@
   border-top-right-radius: 12px;
   border-top-right-radius: 12px;
 
+  @include mobile {
+    height: 50px;
+    border: none;
+
+    .divider,
+    .nav-link {
+      display: none;
+    }
+  }
+
   .nav {
     .flex {
       gap: 20px !important;
+    }
+
+    .toggle-menu {
+      display: none;
+      background-color: var(--light-blue);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-content: center;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @include mobile {
+        display: block;
+      }
     }
 
     .link {
@@ -31,8 +66,21 @@
 
   .toggle-screen {
     img {
-      height: 24px;
       width: 24px;
+      height: 24px;
+    }
+
+    #laptop {
+      display: none;
+    }
+
+    @include mobile {
+      #laptop {
+        display: block;
+      }
+      #mobile {
+        display: none;
+      }
     }
   }
 }

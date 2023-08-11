@@ -1,5 +1,22 @@
+@import "../styles/queries";
+
 .my-assessment {
   gap: 16px;
+
+  @include mobile {
+    .heading {
+      margin-block: 10px;
+    }
+
+    .filter-nav {
+      display: flex !important;
+      gap: 10px;
+    }
+
+    .all-assessment {
+      grid-template-columns: 1fr !important;
+    }
+  }
 
   .all-assessment {
     grid-template-columns: repeat(3, 1fr);

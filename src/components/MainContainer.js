@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Overview from "./Overview";
 import "../styles/overview.scss";
-import Assesments from "./Assesments";
+import Assessments from "./Assessments";
 import AddAssessment from "./AddAssessment";
 
-let initialAssesments = [
+let initialassessments = [
   {
     title: "Math Assessment",
     date: `20 April 2023`,
@@ -23,30 +23,54 @@ let initialAssesments = [
 ];
 
 const MainContainer = () => {
-  const [assesments, setAssesments] = useState(initialAssesments);
-
-  const [addAssessments, setAddAssessments] = useState(false);
-
-  function toggleAddAssessments() {
-    return addAssessments ? setAddAssessments(false) : setAddAssessments(true);
-  }
+  const [assessments, setassessments] = useState(initialassessments);
+  const [showStats, setShowStats] = useState(false);
+  const [activeWindow, setActiveWindow] = useState("my");
+  const [addAssessmentWindow, setAddAssessmentWindow] = useState(false);
 
   return (
     <section className="main-container">
       <Header />
 
-      {addAssessments ? (
-        <AddAssessment toggleAddAssessments={toggleAddAssessments} />
-      ) : (
-        ""
+      {addAssessmentWindow && (
+        <AddAssessment setAddAssessmentWindow={setAddAssessmentWindow} />
       )}
 
       <main className="main grid">
-        <Overview />
-        <Assesments
-          toggleAddAssessments={toggleAddAssessments}
-          assesments={assesments}
-          setAssesments={setAssesments}
+        <nav className="assessment-nav full-hide">
+          <ul className="flex">
+            <li className={activeWindow === "my" ? "active" : ""}>
+              <button
+                onClick={() => {
+                  setActiveWindow("my");
+                  setShowStats(false);
+                }}
+                className="link"
+              >
+                My Assessments
+              </button>
+            </li>
+            <li className={activeWindow === "unstop" ? "active" : ""}>
+              <button
+                onClick={() => {
+                  setActiveWindow("unstop");
+                  setShowStats(false);
+                }}
+                className="link"
+              >
+                Unstop Assessments
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <Overview showStats={showStats} />
+        <Assessments
+          setAddAssessmentWindow={setAddAssessmentWindow}
+          assessments={assessments}
+          setassessments={setassessments}
+          activeWindow={activeWindow}
+          showStats={showStats}
+          setShowStats={setShowStats}
         />
       </main>
     </section>

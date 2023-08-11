@@ -1,19 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import MainContainer from "./components/MainContainer";
 import { Route, Routes } from "react-router-dom";
-import ScreenContext from "./context/ScreenContext";
 import NotFound from "./components/NotFound";
+import ScreenContext from "./context/ScreenContext";
 
 const App = () => {
-  const screenSize = useRef(window.screen.width);
-
-  const [screenType, setScreenType] = useState(() => {
-    return screenSize <= 768 ? "mobile" : "laptop";
-  });
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <ScreenContext.Provider value={screenType}>
+    <ScreenContext.Provider value={{ toggleMenu, setToggleMenu }}>
       <div className="body flex">
         <Sidebar />
         <Routes>

@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/side-bar.scss";
+import ScreenContext from "../context/ScreenContext";
 
 const Sidebar = () => {
+  const { toggleMenu, setToggleMenu } = useContext(ScreenContext);
+
   return (
-    <aside className="side-bar">
+    <aside className={`side-bar ${toggleMenu ? "" : "hide"}`}>
       <div className="container flex">
+        <div className="side-header flex full-hide">
+          <legend>Menu</legend>
+          <button
+            onClick={() => setToggleMenu(!toggleMenu)}
+            className="btn-close"
+          >
+            <span className="icon">
+              <img src="../assets/svg/plus.svg" alt="" />
+            </span>
+          </button>
+        </div>
         <nav className="side-nav-top">
           <ul className="nav">
             <li>
@@ -42,16 +56,14 @@ const Sidebar = () => {
           <ul className="nav">
             <div className="link dash flex ">
               <li className="admin link flex ">
-                <button className="btn-pill">Admin</button>
+                <button className="btn-pill flex">Admin</button>
                 <i className="icon">
                   <img
                     src="./assets/svg/admin_meds.svg"
                     alt="round status icon"
                   />
                 </i>
-                <span className="label">
-                  Round <br /> Status
-                </span>
+                <span className="label">Round Status</span>
               </li>
             </div>
           </ul>

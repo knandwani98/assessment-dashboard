@@ -1,11 +1,11 @@
 import React from "react";
 
-const Tag = () => {
+const Tag = ({ tag, handleDeleteTag, id }) => {
   return (
     <div className="tag flex">
-      UI/UX and designer
-      <span className="icon">
-        <img src="../assets/svg/plus.svg" alt="croos icon" />
+      {tag}
+      <span onClick={() => handleDeleteTag(id)} className="icon btn">
+        <img src="../assets/svg/plus.svg" alt="cross icon" />
       </span>
     </div>
   );
